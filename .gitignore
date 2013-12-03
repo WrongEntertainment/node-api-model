@@ -1,0 +1,9 @@
+###
+# General Files
+###
+*.DS_Store
+
+###
+# Node.kjs Files
+###
+node_modules/
