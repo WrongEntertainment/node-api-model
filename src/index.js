@@ -1,8 +1,8 @@
 /**
- * The Api model.
+ * The Api model class.
  */
 function ApiModel() {
-  // The objact storage.
+  // The object storage.
   this.obj = {
     meta: {
       name: 'ApiModel',
