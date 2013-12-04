@@ -105,4 +105,4 @@ describe('test "src/index.js" routes', function() {
   });
 
 
-})
+});
