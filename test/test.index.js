@@ -2,7 +2,7 @@ var assert = require('assert');
 var ApiModel = require('../src');
 
 
-describe('test "src/index.js" routes', function() {
+describe('src/index.js', function() {
 
   describe('getStore()', function() {
     it('should return the whole store object.', function() {
@@ -103,6 +103,5 @@ describe('test "src/index.js" routes', function() {
       assert.deepEqual(200, model.getMetaCode());
     });
   });
-
 
 });
