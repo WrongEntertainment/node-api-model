@@ -1,32 +1,47 @@
 /**
  * The Api model class.
+ *
+ * Die ApiModel class ist dafür gedacht ein minimales interface für das
+ * api object zur verfügung zu stellen.
+ *
+ * ein api model objekt tellt in der anwendung den speicher für das objekt dar.
+ * Das Objekt wird mit `new` erstellt und bietet die folgenden funktionen:
+ *
+ * - getter/setter
+ * 
  */
 function ApiModel() {
   // The object storage.
-  this.obj = {
+  this.store = {
     meta: {
-      name: 'ApiModel',
-      version: '0.0.0',
       code: 200,
       status: 'ok'
     },
-    response: {
+    data: {
     }
   };
 }
 
 module.exports = ApiModel;
 
+
 /**
- * Get the whole model.
+ * Get the whole storage.
  * 
- * @param  {Object} data    The data you want to response.
- * @param  {Object} options The meta options.
  * @return {Object}         The model object.
  */
-ApiModel.prototype.getObj = function(data, options) {
-  this.obj.response = data;
-  return this.obj;
+ApiModel.prototype.getStore = function() {
+  return this.store;
+};
+
+/**
+ * Set the whole storage.
+ * 
+ * @param {Object} data The data you want to response.
+ */
+ApiModel.prototype.setStore = function(data) {
+  this.store = data;
+  return this.store;
 };
 
 /**
@@ -35,48 +50,74 @@ ApiModel.prototype.getObj = function(data, options) {
  * @return {Object} The meta object.
  */
 ApiModel.prototype.getMeta = function() {
-  return this.obj.meta;
+  return this.store.meta;
 };
 
 /**
  * Set the meta object parameter.
  * 
- * @param  {Object} options The meta parameter.
- * @return {Object}         The meta object.
- */
-ApiModel.prototype.setMeta = function(options) {
-  if (options !== undefined) {
-
-    if (options.name !== undefined)
-      this.obj.meta.name = options.name;
-    
-    if (options.version !== undefined)
-      this.obj.meta.version = options.version;
-    
-    if (options.code !== undefined)
-      this.obj.meta.code = options.code;
-    
-    if (options.status !== undefined)
-      this.obj.meta.status = options.status;
-  }
-  return this.obj.meta;
-};
-
-/**
- * Get the response object.
- * 
- * @return {Object} The response object.
- */
-ApiModel.prototype.getResponse = function() {
-  return this.obj.response;
-};
-
-/**
- * Set the response object.
- *
- * @param  {Object} data The data we want to response.
+ * @param  {Object} meta The meta parameter.
  * @return {Object}      The meta object.
  */
-ApiModel.prototype.setResponse = function(data) {
-  return this.obj.meta;
+ApiModel.prototype.setMeta = function(meta) {
+  this.store.meta = meta;
+  return this.store.meta;
+};
+
+/**
+ * Get the meta code integer.
+ * 
+ * @return {Object} The meta code.
+ */
+ApiModel.prototype.getMetaCode = function() {
+  return this.store.meta.code;
+};
+
+/**
+ * Set the meta code integer.
+ * 
+ * @paran {Number} The meta code.
+ */
+ApiModel.prototype.setMetaCode = function(code) {
+  this.store.meta.code = code;
+  return this.store.meta.code;
+};
+
+/**
+ * Get the meta status message.
+ * 
+ * @return {Object} The meta code.
+ */
+ApiModel.prototype.getMetaStatus = function() {
+  return this.store.meta.code;
+};
+
+/**
+ * Set the meta status message.
+ * 
+ * @paran {Number} The meta code.
+ */
+ApiModel.prototype.setMetaStatus = function(code) {
+  this.store.meta.code = code;
+  return this.store.meta.code;
+};
+
+/**
+ * Get the data object.
+ * 
+ * @return {Object} The data object.
+ */
+ApiModel.prototype.getData = function() {
+  return this.store.data;
+};
+
+/**
+ * Set the data object.
+ *
+ * @param  {Object} data The data we want to response.
+ * @return {Object}      The data object.
+ */
+ApiModel.prototype.setData = function(data) {
+  this.store.data = data;
+  return this.store.data;
 };
