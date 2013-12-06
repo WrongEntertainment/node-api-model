@@ -1,4 +1,4 @@
-# node-api-model
+# api-model
 
 ## General Information
 WIP minimalistic api json model.
