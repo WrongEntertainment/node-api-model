@@ -1,3 +1,7 @@
+###
+# node-api-model Makefile
+###
+
 include node_modules/common-makefiles/node.make
 
 HINT_DIR = src/
