@@ -1,3 +1,5 @@
+var HTTPStatus = require('http-status');
+
 /**
  * The Api model class.
  *
@@ -98,7 +100,15 @@ ApiModel.prototype.getMetaStatus = function() {
  * @param {String} status The meta status.
  */
 ApiModel.prototype.setMetaStatus = function(status) {
-  this.store.meta.status = status;
+  switch(arguments.length) {
+    case 0:
+      this.store.meta.status = HTTPStatus[this.store.meta.code];
+      break;
+    case 1:
+      this.store.meta.status = status;
+      break;
+  }
+
   return this.store.meta.status;
 };
 

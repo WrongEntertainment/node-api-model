@@ -76,8 +76,13 @@ describe('src/index.js', function() {
   describe('setMetaStatus()', function() {
     it('set the meta status and return the value.', function() {
       var model = new ApiModel();
+      model.setMetaStatus();
+      assert.deepEqual('OK', model.getMetaStatus());
+    });
+    it('set the meta status by parameter and return the value.', function() {
+      var model = new ApiModel();
       model.setMetaStatus('some special status code.');
-      assert.deepEqual( 'some special status code.', model.getMetaStatus());
+      assert.deepEqual('some special status code.', model.getMetaStatus());
     });
   }); 
 
