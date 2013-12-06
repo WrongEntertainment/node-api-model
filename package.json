@@ -16,8 +16,8 @@
     "url": "wng@wng.musca.uberspace.de:node-api-model.git"
   },
   "devDependencies": {
-    "common-makefiles": "*",
-    "mocha": "*",
+    "common-makefiles": "0.3.0",
+    "mocha": "1.13.0",
     "jshint": "*"
   }
 }
