@@ -144,14 +144,16 @@ ApiModel.prototype.setData = function(data) {
 ApiModel.prototype.error = function(errorObject, errorCode) {
   delete this.store.data;
 
-  if (arguments.length === 1) {
-    this.store.error = errorObject;
-  }
-  else if (arguments.length === 2) {
-    this.store.error = {
-      message: errorObject,
-      code: errorCode
-    };
+  switch(arguments.length) {
+    case 1:
+      this.store.error = errorObject;
+      break;
+    case 2:
+      this.store.error = {
+        message: errorObject,
+        code: errorCode
+      };
+      break;
   }
 
   return this.store.error;
