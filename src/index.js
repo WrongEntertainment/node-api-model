@@ -15,7 +15,7 @@ function ApiModel() {
   this.store = {
     meta: {
       code: 200,
-      status: 'ok'
+      status: 'OK'
     },
     data: {
     }

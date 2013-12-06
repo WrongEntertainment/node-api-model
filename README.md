@@ -1,6 +1,8 @@
 # node-api-model
 
 ## General Information
+WIP minimalistic api json model.
+
 Create a javascript object to use at your restful api.  
 This javascript object is a base model. A simple object with two main subobjects. one `meta` and one `data`.  
 
