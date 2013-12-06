@@ -76,7 +76,7 @@ ApiModel.prototype.getMetaCode = function() {
 /**
  * Set the meta code integer.
  * 
- * @paran {Number} The meta code.
+ * @param {Number} The meta code.
  */
 ApiModel.prototype.setMetaCode = function(code) {
   this.store.meta.code = code;
@@ -95,7 +95,7 @@ ApiModel.prototype.getMetaStatus = function() {
 /**
  * Set the meta status message.
  * 
- * @paran {String} status The meta status.
+ * @param {String} status The meta status.
  */
 ApiModel.prototype.setMetaStatus = function(status) {
   this.store.meta.status = status;
