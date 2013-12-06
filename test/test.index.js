@@ -10,7 +10,7 @@ describe('src/index.js', function() {
       var expected = {
         meta: {
           code: 200,
-          status: 'ok'
+          status: 'OK'
         },
         data: {}
       };
@@ -34,7 +34,7 @@ describe('src/index.js', function() {
       var model = new ApiModel();
       var expected = {
         code: 200,
-        status: 'ok'
+        status: 'OK'
       };
       assert.deepEqual(expected, model.getMeta());
     });
@@ -69,7 +69,7 @@ describe('src/index.js', function() {
   describe('getMetaStatus()', function() {
     it('should return the meta status.', function() {
       var model = new ApiModel();
-      assert.deepEqual('ok', model.getMetaStatus());
+      assert.deepEqual('OK', model.getMetaStatus());
     });
   }); 
 
@@ -96,6 +96,20 @@ describe('src/index.js', function() {
         param2: 'bar'
       });
       assert.deepEqual(200, model.getMetaCode());
+    });
+  });
+
+  describe('error()', function() {
+    it('set an error object and return the object.', function() {
+      var model = new ApiModel();
+      model.error({message: 'hello error', code: 1337});
+      assert.deepEqual({message: 'hello error', code: 1337}, model.store.error);
+    });
+
+    it('set an error message and code and return the object.', function() {
+      var model = new ApiModel();
+      model.error('hello error', 1337);
+      assert.deepEqual({message: 'hello error', code: 1337}, model.store.error);
     });
   });
 

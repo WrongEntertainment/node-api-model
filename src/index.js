@@ -121,3 +121,28 @@ ApiModel.prototype.setData = function(data) {
   this.store.data = data;
   return this.store.data;
 };
+
+/**
+ * Add an error with message and code parameter.
+ * The data object will be removed from the store object.
+ * Because there is an error and we cannot response data.
+ * 
+ * @param  {String} errorObject The error message.
+ * @param  {String} errorCode   The error code.
+ * @return {Object}             The error object.
+ */
+ApiModel.prototype.error = function(errorObject, errorCode) {
+  delete this.store.data;
+
+  if (arguments.length === 1) {
+    this.store.error = errorObject;
+  }
+  else if (arguments.length === 2) {
+    this.store.error = {
+      message: errorObject,
+      code: errorCode
+    };
+  }
+
+  return this.store.error;
+};
