@@ -14,7 +14,7 @@ describe('src/index.js', function() {
         },
         data: {}
       };
-      assert.deepEqual(expected, model.getStore() );
+      assert.deepEqual(expected, model.getStore());
     });
   });
 
@@ -25,30 +25,29 @@ describe('src/index.js', function() {
       var expected = {
         foo: 'bar'
       };
-      assert.deepEqual(expected, model.getStore() );
+      assert.deepEqual(expected, model.getStore());
     });
   });
 
   describe('getMeta()', function() {
     it('should return the meta object.', function() {
       var model = new ApiModel();
-      var actual = model.getMeta();
       var expected = {
         code: 200,
         status: 'ok'
       };
-      assert.deepEqual(expected, actual);
+      assert.deepEqual(expected, model.getMeta());
     });
   });
 
   describe('setMeta()', function() {
     it('set the meta object and return it.', function() {
       var model = new ApiModel();
-      var actual = model.setMeta({foo: 'bar'});
+      model.setMeta({foo: 'bar'});
       var expected = {
         foo: 'bar'
       };
-      assert.deepEqual(expected, model.getMeta() );
+      assert.deepEqual(expected, model.getMeta());
     });
   });
 
@@ -63,18 +62,14 @@ describe('src/index.js', function() {
     it('set the code and return the value.', function() {
       var model = new ApiModel();
       model.setMetaCode(404);
-      var expected = {
-        code: 404,
-        status: 'ok'
-      };
-      assert.deepEqual(expected, model.store.meta);
+      assert.deepEqual(404, model.getMetaCode());
     });
   });
 
   describe('getMetaStatus()', function() {
     it('should return the meta status.', function() {
       var model = new ApiModel();
-      assert.deepEqual(200, model.getMetaCode());
+      assert.deepEqual('ok', model.getMetaStatus());
     });
   }); 
 
@@ -82,7 +77,7 @@ describe('src/index.js', function() {
     it('set the meta status and return the value.', function() {
       var model = new ApiModel();
       model.setMetaStatus('some special status code.');
-      assert.deepEqual( 'some special status code.', model.getMetaStatus() );
+      assert.deepEqual( 'some special status code.', model.getMetaStatus());
     });
   }); 
 

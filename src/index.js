@@ -86,20 +86,20 @@ ApiModel.prototype.setMetaCode = function(code) {
 /**
  * Get the meta status message.
  * 
- * @return {Object} The meta code.
+ * @return {String} The meta status.
  */
 ApiModel.prototype.getMetaStatus = function() {
-  return this.store.meta.code;
+  return this.store.meta.status;
 };
 
 /**
  * Set the meta status message.
  * 
- * @paran {Number} The meta code.
+ * @paran {String} status The meta status.
  */
-ApiModel.prototype.setMetaStatus = function(code) {
-  this.store.meta.code = code;
-  return this.store.meta.code;
+ApiModel.prototype.setMetaStatus = function(status) {
+  this.store.meta.status = status;
+  return this.store.meta.status;
 };
 
 /**
