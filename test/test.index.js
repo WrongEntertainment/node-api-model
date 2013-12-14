@@ -4,6 +4,34 @@ var ApiModel = require('../src');
 
 describe('src/index.js', function() {
 
+  describe('initialize()', function() {
+    it('initialize without argument.', function() {
+      var model = new ApiModel();
+      var expected = {
+        meta: {
+          code: 200,
+          status: 'OK'
+        },
+        data: {}
+      };
+      assert.deepEqual(expected, model.store);
+    });
+    it('initialize with argument.', function() {
+      var res = {
+        statusCode: 404
+      };
+      var model = new ApiModel(res);
+      var expected = {
+        meta: {
+          code: 404 ,
+          status: 'Not Found'
+        },
+        data: {}
+      };
+      assert.deepEqual(expected, model.store);
+    });
+  });
+
   describe('getStore()', function() {
     it('should return the whole store object.', function() {
       var model = new ApiModel();
