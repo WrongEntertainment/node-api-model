@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.2.1
+- Added response parameter to constructor (write less).
+
 ## v0.2.0
 - Added status code module `http-status`
 - Added `error()` function

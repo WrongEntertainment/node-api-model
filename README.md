@@ -1,4 +1,4 @@
-# api-model v0.2.0
+# api-model v0.2.1
 WIP minimalistic api json model.  
 
 
@@ -36,7 +36,24 @@ Include the module and set the different keys like this:
 var ApiModel = require('api-model');
 
 
-function pingRoute(req, res) {
+function sampleRoute(req, res) {
+  var apiModel = new ApiModel(res);
+  
+  // Set the data you want to response.
+  apiModel.setData('some data here');
+  
+  // Response and return the object.
+  res.json(apiModel.getStore());
+}
+```
+
+At this example we set the status code manually.
+
+```
+var ApiModel = require('api-model');
+
+
+function sampleRoute(req, res) {
   var apiModel = new ApiModel();
   
   // set the api model meta data.
