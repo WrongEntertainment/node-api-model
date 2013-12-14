@@ -1,4 +1,4 @@
-# api-model
+# api-model v0.2.0
 WIP minimalistic api json model.  
 
 
