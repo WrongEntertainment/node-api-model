@@ -1,3 +1,6 @@
+/**
+ * Module dependencies.
+ */
 var HTTPStatus = require('http-status');
 
 /**
@@ -6,13 +9,13 @@ var HTTPStatus = require('http-status');
  * Die ApiModel class ist dafür gedacht ein minimales interface für das
  * api object zur verfügung zu stellen.
  *
- * ein api model objekt tellt in der anwendung den speicher für das objekt dar.
+ * Ein Api model objekt tellt in der anwendung den speicher für das objekt dar.
  * Das Objekt wird mit `new` erstellt und bietet die folgenden funktionen:
  *
  * - getter/setter
  * 
  */
-function ApiModel() {
+function ApiModel(response) {
   // The object storage.
   this.store = {
     meta: {
@@ -22,6 +25,12 @@ function ApiModel() {
     data: {
     }
   };
+
+  // Set the meta code and status if the response parameter exists.
+  if (arguments.length === 1 && response.statusCode) {
+    this.setMetaCode(response.statusCode);
+    this.setMetaStatus();
+  }
 }
 
 module.exports = ApiModel;
@@ -30,7 +39,7 @@ module.exports = ApiModel;
 /**
  * Get the whole storage.
  * 
- * @return {Object}         The model object.
+ * @return {Object} The model object.
  */
 ApiModel.prototype.getStore = function() {
   return this.store;
