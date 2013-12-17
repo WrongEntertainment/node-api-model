@@ -4,16 +4,10 @@
 var HTTPStatus = require('http-status');
 
 /**
- * The Api model class.
- *
- * Die ApiModel class ist dafür gedacht ein minimales interface für das
- * api object zur verfügung zu stellen.
- *
- * Ein Api model objekt tellt in der anwendung den speicher für das objekt dar.
+ * The Api Model class provides a minimal interface for the api object.
  * Das Objekt wird mit `new` erstellt und bietet die folgenden funktionen:
  *
- * - getter/setter
- * 
+ * param response is optional.
  */
 function ApiModel(response) {
   // The object storage.
