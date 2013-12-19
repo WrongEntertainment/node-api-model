@@ -22,7 +22,7 @@ The base model looks like this:
 A simple object with two main subobjects – `meta` and – `data`.  
 
 **meta**  
-The meta object will be filled by `express`, `restify` or an other http server module.
+The meta object will be filled by [express](https://github.com/visionmedia/express), [restify](https://github.com/mcavage/node-restify) or an other http server module.
 
 **data**  
 With the data object you can do anything.
