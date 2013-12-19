@@ -3,7 +3,7 @@ WIP minimalistic api json model.
 
 
 ## General Information
-Create a javascript object to use at your restful api.  
+Create a javascript object to use with your restful api.  
 
 The base model looks like this:
 
@@ -19,7 +19,7 @@ The base model looks like this:
 }
 ```
 
-A simple object with two main subobjects. One `meta` and one `data`.  
+A simple object with two main subobjects – `meta` and – `data`.  
 
 **meta**  
 The meta object will be filled by `express`, `restify` or an other http server module.
@@ -39,15 +39,15 @@ var ApiModel = require('api-model');
 function sampleRoute(req, res) {
   var apiModel = new ApiModel(res);
   
-  // Set the data you want to response.
+  // set the data you want to respond
   apiModel.setData('some data here');
   
-  // Response and return the object.
+  // return the object
   res.json(apiModel.getStore());
 }
 ```
 
-At this example we set the status code manually.
+In this example we set the status code manually.
 
 ```
 var ApiModel = require('api-model');
@@ -56,11 +56,11 @@ var ApiModel = require('api-model');
 function sampleRoute(req, res) {
   var apiModel = new ApiModel();
   
-  // set the api model meta data.
+  // set status code and status
   apiModel.setMetaCode(res.statusCode);
   apiModel.setMetaStatus();
   
-  // Set the data you want to response.
+  // set the data you want to respond
   apiModel.setData({
     foo: 'FOO',
     bar: {
@@ -68,7 +68,7 @@ function sampleRoute(req, res) {
     }
   });
   
-  // response and return the object.
+  // return the object
   res.json(apiModel.getStore());
 }
 ```
