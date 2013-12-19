@@ -29,7 +29,7 @@ With the data object you can do anything.
 
 
 ## How to use
-Simple example how to use the api-model at a route.  
+Simple example on how to use the api-model at a route.  
 Include the module and set the different keys like this:
 
 ```
