@@ -4,6 +4,6 @@
 *.DS_Store
 
 ###
-# Node.kjs Files
+# Node.js Files
 ###
 node_modules/
