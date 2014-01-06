@@ -1,4 +1,4 @@
-# api-model v0.2.1 [![Build Status](https://travis-ci.org/subtub/node-api-model.png?branch=master)](https://travis-ci.org/subtub/node-api-model)
+# api-model v0.2.1 [![Build Status](https://travis-ci.org/subtub/node-api-model.png?branch=master)](https://travis-ci.org/subtub/node-api-model) [![Dependency Status](https://gemnasium.com/subtub/node-api-model.png)](https://gemnasium.com/subtub/node-api-model)
 WIP minimalistic api json model.  
 
 
