@@ -2,6 +2,13 @@
 WIP minimalistic api json model.  
 
 
+## Installation
+
+```
+"api-model": "https://github.com/subtub/node-api-model/archive/v0.2.1.tar.gz"
+```
+
+
 ## General Information
 Create a javascript object to use with your restful api.  
 
