@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.2
+- Added npm ignore
+- Added gemnasium badge
+
 ## v0.2.1
 - Added response parameter to constructor (write less).
 
